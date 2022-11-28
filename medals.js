@@ -59,6 +59,11 @@ class ScratchMedalsExt {
               defaultValue: 'winner'
             }
           }
+        },
+        {
+          opcode: 'ping',
+          blockType: Scratch.BlockType.COMMAND,
+          text: 'Boot Server'
         }
       ]
     };
@@ -84,6 +89,11 @@ class ScratchMedalsExt {
       .catch(err => '')
     let myBool = !(bone === 'true');
     return bone
+  }
+  ping() {
+    return fetch("https://scratchmedals.themadpunter.repl.co/ping", { method: 'GET' })
+      .then(res => res.text())
+      .catch(err => '')
   }
 }
 Scratch.extensions.register(new ScratchMedalsExt());
