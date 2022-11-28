@@ -12,7 +12,7 @@ class ScratchMedalsExt {
       ]
     };
   }
-  getusers() {
+  async function getusers() {
     return fetch('https://scratchmedals.themadpunter.repl.co/api/v1/users/all', {
     method: 'GET',
     headers: {
