@@ -40,6 +40,25 @@ class ScratchMedalsExt {
               defaultValue: 'winner'
             }
           }
+        },
+        {
+          opcode: 'hasmedal',
+          blockType: Scratch.BlockType.BOOLEAN,
+          text: 'Player [USER] has medal [ID] from game [GAME]?',
+          arguments: {
+            USER: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'The_Mad_Punter'
+            },
+            GAME: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'benji1'
+            },
+            ID: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'winner'
+            }
+          }
         }
       ]
     };
@@ -56,6 +75,11 @@ class ScratchMedalsExt {
   }
   givemedal(args) {
     return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/give/".concat(args.USER,"/",args.GAME,"/",args.ID), { method: 'GET' })
+      .then(res => res.text())
+      .catch(err => '')
+  }
+  givemedal(args) {
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/check/".concat(args.USER,"/",args.GAME,"/",args.ID), { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
   }
