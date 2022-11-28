@@ -83,7 +83,7 @@ class ScratchMedalsExt {
       .then(res => res.text())
       .catch(err => '')
     let myBool = !(bone === 'true');
-    return myBool
+    return bone
   }
 }
 Scratch.extensions.register(new ScratchMedalsExt());
