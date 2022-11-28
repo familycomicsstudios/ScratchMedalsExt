@@ -8,12 +8,28 @@ class ScratchMedalsExt {
           opcode: 'getusers',
           blockType: Scratch.BlockType.REPORTER,
           text: 'All Users'
+        },
+        {
+          opcode: 'getuser',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Get User [USER]'
+          arguments: {
+            USER: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'The_Mad_Punter'
+            }
+          }
         }
       ]
     };
   }
   getusers() {
     return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/users/all", { method: 'GET' })
+      .then(res => res.text())
+      .catch(err => '')
+  }
+  getuser(user) {
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/users/user?id="+user, { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
   }
