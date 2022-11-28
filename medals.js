@@ -18,7 +18,6 @@ class ScratchMedalsExt {
               type: Scratch.ArgumentType.STRING,
               defaultValue: 'The_Mad_Punter'
             }
-          }
         }
       ]
     };
