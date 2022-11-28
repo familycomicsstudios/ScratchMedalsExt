@@ -79,9 +79,11 @@ class ScratchMedalsExt {
       .catch(err => '')
   }
   givemedal(args) {
-    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/check/".concat(args.USER,"/",args.GAME,"/",args.ID), { method: 'GET' })
+    var bone = fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/check/".concat(args.USER,"/",args.GAME,"/",args.ID), { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
+    let myBool = (bone.toLowerCase() === 'true');
+    return myBool
   }
 }
 Scratch.extensions.register(new ScratchMedalsExt());
