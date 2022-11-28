@@ -12,7 +12,7 @@ class ScratchMedalsExt {
         {
           opcode: 'getuser',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'Get User [USER]'
+          text: 'Get User [USER]',
           arguments: {
             USER: {
               type: Scratch.ArgumentType.STRING,
