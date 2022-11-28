@@ -8,7 +8,6 @@ class ScratchMedalsExt {
           opcode: 'getusers',
           blockType: Scratch.BlockType.REPORTER,
           text: 'All Users'
-          }
         }
       ]
     };
