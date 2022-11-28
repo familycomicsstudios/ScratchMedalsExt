@@ -82,7 +82,7 @@ class ScratchMedalsExt {
     var bone = fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/check/".concat(args.USER,"/",args.GAME,"/",args.ID), { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
-    let myBool = (bone.toLowerCase() === 'true');
+    let myBool = (bone === 'true');
     return myBool
   }
 }
