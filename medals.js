@@ -78,7 +78,7 @@ class ScratchMedalsExt {
       .then(res => res.text())
       .catch(err => '')
   }
-  givemedal(args) {
+  hasmedal(args) {
     var bone = fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/check/".concat(args.USER,"/",args.GAME,"/",args.ID), { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
