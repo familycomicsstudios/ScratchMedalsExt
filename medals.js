@@ -14,7 +14,7 @@ class ScratchMedalsExt {
           blockType: Scratch.BlockType.REPORTER,
           text: 'Get User [USER]'
           arguments: {
-            USER: {
+            "USER": {
               type: Scratch.ArgumentType.STRING,
               defaultValue: 'The_Mad_Punter'
             }
