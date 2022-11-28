@@ -28,8 +28,8 @@ class ScratchMedalsExt {
       .then(res => res.text())
       .catch(err => '')
   }
-  getuser(user) {
-    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/users/user?id="+user, { method: 'GET' })
+  getuser(args) {
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/users/user?id="+args.USER, { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
   }
