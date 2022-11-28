@@ -13,13 +13,9 @@ class ScratchMedalsExt {
     };
   }
   getusers() {
-    return fetch('https://scratchmedals.themadpunter.repl.co/api/v1/users/all', {
-    method: 'GET',
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-    }
-})
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/users/all", { method: 'GET' })
+      .then(res => res.text())
+      .catch(err => '')
   }
 }
 Scratch.extensions.register(new ScratchMedalsExt());
