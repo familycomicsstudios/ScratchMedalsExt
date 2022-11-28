@@ -25,7 +25,7 @@ class ScratchMedalsExt {
         {
           opcode: 'givemedal',
           blockType: Scratch.BlockType.COMMAND,
-          text: 'Give Player Medal',
+          text: 'Give Player Medal [USER] with game [GAME] and Medal ID [ID]',
           arguments: {
             USER: {
               type: Scratch.ArgumentType.STRING,
