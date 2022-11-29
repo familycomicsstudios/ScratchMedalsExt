@@ -71,7 +71,29 @@ class ScratchMedalsExt {
           opcode: 'ping',
           blockType: Scratch.BlockType.COMMAND,
           text: 'Boot Server'
-        }
+        },
+        {
+          opcode: 'getmedals',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'All Medals',
+          disableMonitor: true
+        },
+        {
+          opcode: 'getmedal',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Get Medal [GAME] [ID]',
+          arguments: {
+            GAME: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'benji1'
+            },
+            ID: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'winner'
+            }
+          },
+          disableMonitor: true
+        },
       ]
     };
   }
@@ -99,6 +121,16 @@ class ScratchMedalsExt {
   }
   ping() {
     return fetch("https://scratchmedals.themadpunter.repl.co/ping", { method: 'GET' })
+      .then(res => res.text())
+      .catch(err => '')
+  }
+  getmedals() {
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/all", { method: 'GET' })
+      .then(res => res.text())
+      .catch(err => '')
+  }
+  getmedal(args) {
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/medal/".concat(args.GAME,"/",args.ID,"/"), { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
   }
