@@ -94,6 +94,18 @@ class ScratchMedalsExt {
           },
           disableMonitor: true
         },
+        {
+          opcode: 'getgame',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Get Game [GAME]',
+          arguments: {
+            GAME: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'benji1'
+            }
+          },
+          disableMonitor: true
+        },
       ]
     };
   }
@@ -131,6 +143,11 @@ class ScratchMedalsExt {
   }
   getmedal(args) {
     return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/medal/".concat(args.GAME,"/",args.ID), { method: 'GET' })
+      .then(res => res.text())
+      .catch(err => '')
+  }
+  getgame(args) {
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/medal/".concat(args.GAME,"/all"), { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
   }
