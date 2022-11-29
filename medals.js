@@ -130,7 +130,7 @@ class ScratchMedalsExt {
       .catch(err => '')
   }
   getmedal(args) {
-    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/medal/".concat(args.GAME,"/",args.ID,"/"), { method: 'GET' })
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/medal/".concat(args.GAME,"/",args.ID), { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
   }
