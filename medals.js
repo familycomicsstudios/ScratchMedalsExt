@@ -115,7 +115,7 @@ class ScratchMedalsExt {
           blockType: Scratch.BlockType.REPORTER,
           text: 'Get Username [CODE]',
           arguments: {
-            GAME: {
+            CODE: {
               type: Scratch.ArgumentType.STRING,
               defaultValue: '00000000'
             }
