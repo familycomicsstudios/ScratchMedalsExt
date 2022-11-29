@@ -172,5 +172,6 @@ class ScratchMedalsExt {
   }
   reqlogin() {
     return window.open('https://scratchmedals.themadpunter.repl.co/', '_blank', '_blank');
+  }
 }
 Scratch.extensions.register(new ScratchMedalsExt());
