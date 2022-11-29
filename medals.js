@@ -111,14 +111,16 @@ class ScratchMedalsExt {
           disableMonitor: true
         },
         {
-          opcode: 'username_notscratch',
-          blockType: Scratch.BlockType.REPORTER,
-          text: 'Username'
-        },
-        {
           opcode: 'reqlogin',
-          blockType: Scratch.BlockType.COMMAND,
-          text: 'Request Login'
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Get Username [CODE]',
+          arguments: {
+            GAME: {
+              type: Scratch.ArgumentType.NUMBER,
+              defaultValue: '00000000'
+            }
+          },
+          disableMonitor: true
         }
       ]
     };
@@ -165,13 +167,10 @@ class ScratchMedalsExt {
       .then(res => res.text())
       .catch(err => '')
   }
-  username_notscratch() {
-    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/username/get", { method: 'GET' })
+  reqlogin(args) {
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/verify/".concat(args.CODE), { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
-  }
-  reqlogin() {
-    return window.open('https://scratchmedals.themadpunter.repl.co/', '_blank', '_blank');
   }
 }
 Scratch.extensions.register(new ScratchMedalsExt());
