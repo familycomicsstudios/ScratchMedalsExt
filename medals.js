@@ -116,7 +116,7 @@ class ScratchMedalsExt {
           text: 'Get Username [CODE]',
           arguments: {
             GAME: {
-              type: Scratch.ArgumentType.NUMBER,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: '00000000'
             }
           },
