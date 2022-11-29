@@ -114,6 +114,11 @@ class ScratchMedalsExt {
           opcode: 'username_notscratch',
           blockType: Scratch.BlockType.REPORTER,
           text: 'Username'
+        },
+        {
+          opcode: 'reqlogin',
+          blockType: Scratch.BlockType.COMMAND,
+          text: 'Request Login'
         }
       ]
     };
@@ -165,5 +170,7 @@ class ScratchMedalsExt {
       .then(res => res.text())
       .catch(err => '')
   }
+  reqlogin() {
+    return window.open('https://scratchmedals.themadpunter.repl.co/', '_blank', '_blank');
 }
 Scratch.extensions.register(new ScratchMedalsExt());
