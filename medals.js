@@ -110,6 +110,11 @@ class ScratchMedalsExt {
           },
           disableMonitor: true
         },
+        {
+          opcode: 'username_notscratch',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Username'
+        }
       ]
     };
   }
@@ -152,6 +157,11 @@ class ScratchMedalsExt {
   }
   getgame(args) {
     return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/medal/".concat(args.GAME,"/all"), { method: 'GET' })
+      .then(res => res.text())
+      .catch(err => '')
+  }
+  username_notscratch() {
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/username/get", { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
   }
