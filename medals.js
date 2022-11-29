@@ -6,7 +6,7 @@ class ScratchMedalsExt {
     return {
       id: 'scratchmedalsext', // change this if you make an actual extension!
       name: 'Medals',
-      color1: '#fff800',
+      color1: '#ffc400',
       color2: '#a59a0d',
       menuIconURI: menuIconURI,
       blockIconURI: blockIconURI,
