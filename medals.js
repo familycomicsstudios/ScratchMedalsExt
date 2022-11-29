@@ -32,7 +32,7 @@ class ScratchMedalsExt {
         {
           opcode: 'givemedal',
           blockType: Scratch.BlockType.COMMAND,
-          text: 'Give Player Medal [USER] with game [GAME] and Medal ID [ID]',
+          text: 'Give Player Medal [USER] with game [GAME] and Medal ID [ID] - SECRET KEY [KEY]',
           arguments: {
             USER: {
               type: Scratch.ArgumentType.STRING,
@@ -45,6 +45,10 @@ class ScratchMedalsExt {
             ID: {
               type: Scratch.ArgumentType.STRING,
               defaultValue: 'winner'
+            },
+            KEY: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'Enter your game\'s secret key here'
             }
           }
         },
@@ -120,7 +124,7 @@ class ScratchMedalsExt {
       .catch(err => '')
   }
   givemedal(args) {
-    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/give/".concat(args.USER,"/",args.GAME,"/",args.ID), { method: 'GET' })
+    return fetch("https://scratchmedals.themadpunter.repl.co/api/v1/medals/give/".concat(args.USER,"/",args.GAME,"/",args.ID,"/",args.KEY), { method: 'GET' })
       .then(res => res.text())
       .catch(err => '')
   }
