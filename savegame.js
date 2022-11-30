@@ -1,7 +1,7 @@
 class LocalStorageExtension {
   getInfo() {
     return {
-      id: 'localstorageextension', // change this if you make an actual extension!
+      id: 'localstorage', // change this if you make an actual extension!
       name: 'Save Game',
       blocks: [
         {
@@ -29,7 +29,7 @@ class LocalStorageExtension {
               defaultValue: 'level at'
             }
           },
-          disableMonitor: true;
+          disableMonitor: true
         }
       ]
     };
