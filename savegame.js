@@ -42,4 +42,4 @@ class LocalStorageExtension {
     return localStorage.getItem(args.ONE);
   }
 }
-Scratch.extensions.register(new StrictEqualityExtension());
+Scratch.extensions.register(new LocalStorageExtension());
